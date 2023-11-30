@@ -1,0 +1,71 @@
+1a
+
+
+
+day=$(date +%F)
+for file in *.jpg
+do
+ mv $file ${day}~${file}
+done
+
+
+chmod +x a.sh
+./a.sh
+ls
+
+
+
+
+
+
+
+1b
+
+
+echo "enter name"
+read filenm
+if [ -e $filenm ]
+then echo " exists"
+	if [ -s $filenm ]
+	then echo "size > 0"
+	else
+	rm $filenm
+	echo "deleted"
+	fi
+else 
+echo "not exixt"
+fi
+
+
+vi 1b.sh
+esc + : + w+Q
+./1b.sh
+
+
+
+
+
+1c
+
+vi a1.txt
+text taka...
+esc + : + w+Q
+
+cat a1.txt
+cat -n a1.txt >a2.txt    //num
+cat a2.txt
+sort -k2 a2.txt >a3.txt  //sort name
+cat a3.txt
+uniq -f1 a3.txt >a4.txt  //unique
+cat a4.txt
+sort -k1 a5.txt >a6.txt  //sort num
+cat a6.txt
+cut -f2 a6.txt >a7.txt    //num remove
+cat a7.txt
+.........
+sort -k2 a2.txt >a3.txt  //sort name
+
+
+cat -n a1.txt | sort -k2 | uniq -f1 | sort -k1 | cut -f2 | sort -k2 > a2.txt
+
+

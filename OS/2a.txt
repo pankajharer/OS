@@ -1,0 +1,70 @@
+i="y"
+while [ $i = "y" ]
+do
+echo "1)present working directory"
+echo "2)list of files and directories "
+echo "3)creating directory "
+echo "4)changing directory "
+echo "5)remove a directory "
+echo "6)create a file "
+echo "7)display content of file "
+echo "8)rename a file "
+echo "9)copy a file "
+echo "10)remove a file "
+echo "enter your choice"
+read ch
+case $ch in
+1)echo "current present working directory is "
+pwd;;
+2)echo "list of files and directories is"
+ls;;
+3)echo "creating directory "
+echo "enter name of directory to be created "
+read newdir
+
+mkdir $newdir;;
+4)echo "changing directory "
+echo "enter name of directory to be switched "
+read chdir
+cd $chdir;;
+5)echo "changing directory "
+echo "enter name of directory to be removed "
+read remdir
+rmdir $remdir;;
+6)echo "created a file "
+echo "enter name of a file to be created "
+read fl
+touch $fl;;
+7)echo "enter name of file to display content "
+read fl
+cat $fl;;
+8)echo "enter name of a source file to be renamed "
+read sfl
+echo "enter new name "
+read nfl
+mv $sfl $nfl;;
+9)echo "enter name of a source file to be copied "
+read sfl
+echo "enter name of a destination file "
+read dfl
+cp $sfl $dfl;;
+10)echo "enter name of a file to be removed "
+read dfl
+rm $dfl;;
+*)echo "invalid -_- "
+
+esac
+echo "type y to continue"
+read i
+if [ $i != "y" ]
+then
+exit
+fi
+done
+
+
+
+
+/////
+chmod +x m.sh
+./m.sh
